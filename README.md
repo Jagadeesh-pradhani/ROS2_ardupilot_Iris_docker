@@ -17,11 +17,10 @@ This repository contains a Docker setup for building and running ArduPilot SITL 
 - `README.md`: This file.
 
 ## Getting Started
+
+### Cloning the Repository
 ```
 https://github.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker.git
 cd ROS2_ardupilot_Iris_docker
 ```
-
-### Cloning the Repository
-
 
