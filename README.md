@@ -5,6 +5,7 @@ This repository contains a Docker setup for building and running ArduPilot SITL 
 ## Prerequisites
 
 - Docker
+  Install Docker: https://docs.docker.com/get-docker/
 
 ## Repository Structure
 
@@ -16,6 +17,10 @@ This repository contains a Docker setup for building and running ArduPilot SITL 
 - `README.md`: This file.
 
 ## Getting Started
+```
+https://github.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker.git
+cd ROS2_ardupilot_Iris_docker
+```
 
 ### Cloning the Repository
 
