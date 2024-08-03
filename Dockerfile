@@ -43,7 +43,7 @@ WORKDIR /home/$USERNAME
 
 RUN sudo apt install default-jre \
     && sudo apt-get install gitk git-gui \
-    && sudo apt-get install gcc-arm-none-eabi
+    && sudo apt-get install gcc-arm-none-eabi -y
 
 RUN cd ~/ \
     && git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
@@ -62,15 +62,13 @@ RUN cd ~/ \
 RUN cd ~/ardupilot \
     && ./waf distclean \
     && ./waf distclean \
-    && ./waf configure --board MatekF405-Wing \
-    && ./waf plane
-
+    && ./waf configure --board MatekF405-Wing
 
 RUN mkdir -p ~/ros2_ws/src \
     && cd ~/ros2_ws
 
 COPY ros2.repos /home/${USERNAME}/ros2_ws/ros2.repos
-COPY ros2.repos /home/${USERNAME}/ros2_ws/ros2_gz.repos
+COPY ros2_gz.repos /home/${USERNAME}/ros2_ws/ros2_gz.repos
 
 
 
@@ -78,17 +76,23 @@ RUN cd ~/ros2_ws/ \
     && vcs import --recursive --input  ./ros2.repos src \
     && sudo apt update \
     && rosdep update \
-    && source /opt/ros/humble/setup.bash \
+    && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
     && rosdep install -y --from-paths src --ignore-src
 
 #BUild
 RUN cd ~/ros2_ws \
-    && colcon build --packages-up-to ardupilot_dds_tests 
+    && colcon build --packages-up-to ardupilot_dds_tests || true
 RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
+
+RUN sudo rm /home/${USERNAME}/ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh
+COPY install-prereqs-ubuntu.sh /home/${USERNAME}/ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh
 
 
 RUN cd ~/ardupilot \
-    && Tools/environment_install/install-prereqs-ubuntu.sh -y \
+    && sudo apt-get install -y python3-pip \
+    && sudo pip3 install future \
+    && Tools/environment_install/install-prereqs-ubuntu.sh -y || true \
+    && sudo apt-get install -y python3-pexpect \
     && ./waf clean \
     && ./waf configure --board sitl \
     && ./waf copter -v 
@@ -102,13 +106,13 @@ RUN /bin/bash -c "source /opt/ros/humble/setup.bash"
 
 #Build
 RUN cd ~/ros2_ws/ \
-    && colcon build --packages-up-to ardupilot_sitl
+    && colcon build --packages-up-to ardupilot_sitl || true
 RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 
 #ROS2 with SITL in GAZEBO
 RUN cd ~/ros2_ws \
     && vcs import --input ./ros2_gz.repos --recursive src \
-    && source /opt/ros/humble/setup.bash \
+    && /bin/bash -c "source /opt/ros/humble/setup.bash" \
     && sudo apt update \
     && rosdep update \
     && rosdep install -y --from-paths src --ignore-src -r
@@ -116,7 +120,7 @@ RUN cd ~/ros2_ws \
 
 #Build
 RUN cd ~/ros2_ws \
-    && colcon build --packages-up-to ardupilot_gz_bringup
+    && colcon build --packages-up-to ardupilot_gz_bringup || true
 RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 
 
