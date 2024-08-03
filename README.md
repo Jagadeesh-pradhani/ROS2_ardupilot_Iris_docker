@@ -9,5 +9,14 @@ This repository contains a Docker setup for building and running ArduPilot SITL 
 ## Repository Structure
 
 - `Dockerfile`: The Dockerfile containing the instructions to build the Docker image.
-- `entrypoint.sh`: An optional script for additional build steps.
+- `entrypoint.sh`: Entrypoint script.
+- `install-prereqs-ubuntu.sh`: Requirements script for ardupilot.
+- `bashrc`: Bashrc file for image.
+- `inst.sh`: Instruction script for downloading without docker.
 - `README.md`: This file.
+
+## Getting Started
+
+### Cloning the Repository
+
+
