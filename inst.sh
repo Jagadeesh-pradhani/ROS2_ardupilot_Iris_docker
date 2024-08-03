@@ -154,9 +154,6 @@ colcon test-result --all --verbose
 ###############################################################################
 ##TESING  : Final simulation 
 
-#Replace the 'iris_bridge.yaml' file inside 'config' folder at ~/ros2_ws/src/ardupilot_gz/ardupilot_gz_bringup/config/
-#Replace the 'iris_with_gimbal' folder inside 'models' folder at ~/ros2_ws/src/ardupilot_gazebo/models/
-#Replace the 'iris_with_lidar' folder inside 'models' folder at ~/ros2_ws/src/ardupilot_gz/ardupilot_gz_description/models/
 
 
 #Terminal-1
