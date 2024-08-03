@@ -37,16 +37,27 @@ RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyri
 # Set up ROS 2 workspace
 USER $USERNAME
 WORKDIR /home/$USERNAME
-COPY ardupilot /home/${USERNAME}/ardupilot
-COPY Micro-XRCE-DDS-Gen /home/${USERNAME}/Micro-XRCE-DDS-Gen
+#COPY ardupilot /home/${USERNAME}/ardupilot
+#COPY Micro-XRCE-DDS-Gen /home/${USERNAME}/Micro-XRCE-DDS-Gen
 
 
 RUN sudo apt install default-jre \
     && sudo apt-get install gitk git-gui \
     && sudo apt-get install gcc-arm-none-eabi
 
+RUN cd ~/ \
+    && git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
+
 RUN cd ~/Micro-XRCE-DDS-Gen \
     && ./gradlew assemble
+
+RUN cd ~/ \
+    && git clone https://github.com/ArduPilot/ardupilot.git \
+    && cd ardupilot \
+    && git submodule update --init --recursive \
+    && git submodule init \
+    && git submodule update \
+    && git status 
 
 RUN cd ~/ardupilot \
     && ./waf distclean \
