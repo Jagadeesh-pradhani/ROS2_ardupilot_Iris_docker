@@ -73,7 +73,7 @@ COPY ros2_gz.repos /home/${USERNAME}/ros2_ws/ros2_gz.repos
 
 
 RUN cd ~/ros2_ws/ \
-    && vcs import --recursive --input  ./ros2.repos src \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src    \
     && sudo apt update \
     && rosdep update \
     && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
@@ -111,11 +111,11 @@ RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 
 #ROS2 with SITL in GAZEBO
 RUN cd ~/ros2_ws \
-    && vcs import --input ./ros2_gz.repos --recursive src \
+    && vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src || true  \
     && /bin/bash -c "source /opt/ros/humble/setup.bash" \
     && sudo apt update \
     && rosdep update \
-    && rosdep install -y --from-paths src --ignore-src -r
+    && rosdep install -y --from-paths src --ignore-src -r || true
 
 
 #Build
