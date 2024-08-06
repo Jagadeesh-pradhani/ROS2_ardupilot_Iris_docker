@@ -42,7 +42,7 @@ docker build -t ros_humble .
 
 ### Running the Docker Container
 ```
-docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY ros_humble
+docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix:rw --env=DISPLAY -v /dev/input:/dev/input --device-cgroup-rule='c 13:* rmw' ros_humble
 ```
 
 ## Specifications
