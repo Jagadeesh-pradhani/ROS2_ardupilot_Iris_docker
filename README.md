@@ -67,11 +67,15 @@ colcon build
 source install/setup.bash
 ros2 launch ardupilot_gz_bringup iris_maze.launch.py
 ```
-
+TO connect to Drone and to RC controller.
 ### Terminal-2
 ```
+pip3 install pygame
 mavproxy.py --console --map --aircraft test --master=:14550
+module load joystick
 ```
+
+Calibrate joy stick from QGC or Mission planner.
 
 ![image](https://github.com/user-attachments/assets/6860d8e6-47c2-46b9-9c3f-610dd481ca7e)
 
