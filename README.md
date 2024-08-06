@@ -46,6 +46,7 @@ Use `Ardupilot_ros.ah` script file for commands and process.
 ```
 cd ~/ros2_ws
 source install/setup.bash
+colcon build
 ros2 launch ardupilot_gz_bringup iris_runway.launch.py
 ```
 
