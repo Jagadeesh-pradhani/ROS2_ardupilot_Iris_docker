@@ -82,6 +82,15 @@ Calibrate joy stick from QGC or Mission planner.
 ![image](https://github.com/user-attachments/assets/6860d8e6-47c2-46b9-9c3f-610dd481ca7e)
 
 
+## Tips
+Use `ctrl+d` to exit docker terminal. <br>
+Use the commands shown above in `Running the Docker Container` only for the first time, next time onwards use following to open and close docker.<br>
+This will open the loaded docker container, then continue with `Running Simulaiton`.
+```
+docker start  `docker ps -q -l` && docker attach `docker ps -q -l`
+```
+
+
 ## Customizing the Build
 The Dockerfile installs necessary dependencies, clones the ArduPilot repository, and runs the build process. It is designed to continue the build even if some steps fail.
 Modify the Dockerfile for any changes.
