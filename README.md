@@ -51,20 +51,30 @@ docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-
 
 ## Running Simulaiton
 
-Use `Ardupilot_ros.ah` script file for commands and process.
+Use `Ardupilot_ros.ah` script file for commands and process. <br>
+```
+cd ~/ros2_ws/
+colcon test --packages-select ardupilot_dds_tests
+colcon build --packages-up-to ardupilot_sitl
+colcon build --packages-up-to ardupilot_gz_bringup
+source install/setup.bash
+```
 
 ### Terminal-1
 ```
 cd ~/ros2_ws
-source install/setup.bash
 colcon build
-ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+source install/setup.bash
+ros2 launch ardupilot_gz_bringup iris_maze.launch.py
 ```
 
 ### Terminal-2
 ```
 mavproxy.py --console --map --aircraft test --master=:14550
 ```
+
+![image](https://github.com/user-attachments/assets/6860d8e6-47c2-46b9-9c3f-610dd481ca7e)
+
 
 ## Customizing the Build
 The Dockerfile installs necessary dependencies, clones the ArduPilot repository, and runs the build process. It is designed to continue the build even if some steps fail.
