@@ -5,7 +5,18 @@ This repository contains a Docker setup for building and running ArduPilot SITL 
 ## Prerequisites
 
 - Docker <br>
-  Install Docker: https://docs.docker.com/get-docker/
+  Install Docker: https://docs.docker.com/get-docker/ <br>
+
+  ```
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh ./get-docker.sh
+  ```
+  ```
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  systemctl is-enabled docker
+  ```
+  REBOOT the system
 
 ## Repository Structure
 
