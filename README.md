@@ -52,6 +52,8 @@ docker run -it --user ros --network=host --ipc=host -v /tmp/.X11-unix:/tmp/.X11-
 ## Running Simulaiton
 
 Use `Ardupilot_ros.ah` script file for commands and process. <br>
+PC may crash while building 'ros2_gz'. <br>
+close all other tabs except terminal and run following.
 ```
 cd ~/ros2_ws/
 colcon test --packages-select ardupilot_dds_tests
