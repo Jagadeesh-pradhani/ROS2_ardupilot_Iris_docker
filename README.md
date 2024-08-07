@@ -79,7 +79,7 @@ module load joystick
 
 Calibrate joy stick from QGC or Mission planner.
 
-![image](https://github.com/user-attachments/assets/6860d8e6-47c2-46b9-9c3f-610dd481ca7e)
+
 
 
 ## Tips
