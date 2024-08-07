@@ -96,6 +96,7 @@ The Dockerfile installs necessary dependencies, clones the ArduPilot repository,
 Modify the Dockerfile for any changes.
 
 ## Troubleshooting
+If theres a build error, comment out the lines containing `colcon build`.
 If you encounter issues during the build process, you can modify the Dockerfile to suit your needs. Ensure all necessary dependencies are installed and paths are correctly set.
 
 ## Contributing
