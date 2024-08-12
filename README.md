@@ -79,6 +79,13 @@ module load joystick
 
 Calibrate joy stick from QGC or Mission planner.
 
+## Pull package
+
+```
+docker pull ghcr.io/jagadeesh-pradhani/ros2_ardupilot_iris_docker:main
+```
+
+
 
 
 
