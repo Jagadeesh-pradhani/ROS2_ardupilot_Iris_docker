@@ -31,6 +31,7 @@ You may now navigate while mapping using the Nav2 Goal tool in RVIZ!
 
 ## DDS/micro-Ros
 Ardupilot contains the DDS Client library, which can run as SITL. Then, the DDS application runs a ROS 2 node, an eProsima Integration Service, and the MicroXRCE Agent. The two systems communicate over serial or UDP. <br>
+**AP_DDS** is a library within ArduPilot that uses the Data Distribution Service (DDS) protocol for communication. It enables seamless data exchange between ArduPilot (the flight controller) and external systems like ROS2. Through this library, ArduPilot can publish critical telemetry data (e.g., IMU, GPS) and receive commands or other messages over DDS, integrating with ROS2 by using micro-ROS for resource-efficient communication. Topics are published in ROS2, facilitating control and sensor interaction with drones.
 ```mermaid
 ---
 title: UDP Loopback
@@ -53,6 +54,63 @@ graph LR
 
   end
 ```
+Once the simulation runs You should be able to see the agent here and view the data output.
+
+```bash
+$ ros2 node list
+/ardupilot_dds
+```
+
+```bash
+$ ros2 topic list -v
+Published topics:
+ * /ap/battery/battery0 [sensor_msgs/msg/BatteryState] 1 publisher
+ * /ap/clock [rosgraph_msgs/msg/Clock] 1 publisher
+ * /ap/geopose/filtered [geographic_msgs/msg/GeoPoseStamped] 1 publisher
+ * /ap/gps_global_origin/filtered [geographic_msgs/msg/GeoPointStamped] 1 publisher
+ * /ap/imu/experimental/data [sensor_msgs/msg/Imu] 1 publisher
+ * /ap/navsat/navsat0 [sensor_msgs/msg/NavSatFix] 1 publisher
+ * /ap/pose/filtered [geometry_msgs/msg/PoseStamped] 1 publisher
+ * /ap/tf_static [tf2_msgs/msg/TFMessage] 1 publisher
+ * /ap/time [builtin_interfaces/msg/Time] 1 publisher
+ * /ap/twist/filtered [geometry_msgs/msg/TwistStamped] 1 publisher
+ * /parameter_events [rcl_interfaces/msg/ParameterEvent] 1 publisher
+ * /rosout [rcl_interfaces/msg/Log] 1 publisher
+
+Subscribed topics:
+ * /ap/cmd_gps_pose [ardupilot_msgs/msg/GlobalPosition] 1 subscriber
+ * /ap/cmd_vel [geometry_msgs/msg/TwistStamped] 1 subscriber
+ * /ap/joy [sensor_msgs/msg/Joy] 1 subscriber
+ * /ap/tf [tf2_msgs/msg/TFMessage] 1 subscriber
+```
+
+```bash
+$ ros2 topic hz /ap/time
+average rate: 50.115
+        min: 0.012s max: 0.024s std dev: 0.00328s window: 52
+```
+
+```bash
+$ ros2 topic echo /ap/time
+sec: 1678668735
+nanosec: 729410000
+```
+
+```bash
+$ ros2 service list
+/ap/arm_motors
+/ap/mode_switch
+---
+```
+
+The static transforms for enabled sensors are also published, and can be received like so:
+
+```bash
+ros2 topic echo /ap/tf_static --qos-depth 1 --qos-history keep_last --qos-reliability reliable --qos-durability transient_local --once
+```
+
+In order to consume the transforms, it's highly recommended to [create and run a transform broadcaster in ROS 2](https://docs.ros.org/en/humble/Concepts/About-Tf2.html#tutorials).
+
 
 ## Info
 1. TF frames of the simulation.
