@@ -28,3 +28,12 @@ Launch the simulation:
 ros2 launch ardupilot_ros navigation.launch.py
 ```
 You may now navigate while mapping using the Nav2 Goal tool in RVIZ!
+
+## Info
+1. TF frames of the simulation.
+![image](https://github.com/user-attachments/assets/d0768435-7fd6-4ac3-8513-62273b8e2ce7)
+
+2. rqt_graph
+![anas](https://github.com/user-attachments/assets/4501180e-c8b8-4015-9d1d-d27d49410e6e)
+
+
