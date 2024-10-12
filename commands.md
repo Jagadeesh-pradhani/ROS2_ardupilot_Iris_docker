@@ -23,6 +23,7 @@ sudo apt-get install gcc-arm-none-eabi
 ```
 cd
 git clone https://github.com/ArduPilot/ardupilot.git
+cd ardupilot
 git submodule update --init --recursive
 ```
 
