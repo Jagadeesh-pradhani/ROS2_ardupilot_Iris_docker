@@ -98,10 +98,14 @@ colcon test-result --all --verbose
 ```
 
 ## Test
-```Terminal-1
+```
 cd ~/ros2_ws
 source install/setup.bash
 ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+```
+
+```
+mavproxy.py --console --map --aircraft test --master=:14550
 ```
 
 
