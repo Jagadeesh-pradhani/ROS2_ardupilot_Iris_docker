@@ -108,7 +108,7 @@ The static transforms for enabled sensors are also published, and can be receive
 ```bash
 ros2 topic echo /ap/tf_static --qos-depth 1 --qos-history keep_last --qos-reliability reliable --qos-durability transient_local --once
 ```
-
+This conversion  of data allows to connect both drone and ROS2 seamlesly.
 In order to consume the transforms, it's highly recommended to [create and run a transform broadcaster in ROS 2](https://docs.ros.org/en/humble/Concepts/About-Tf2.html#tutorials).
 
 
