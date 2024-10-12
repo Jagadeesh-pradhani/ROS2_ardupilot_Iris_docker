@@ -10,6 +10,7 @@ Now, how do you go from knowing the ROS basics, to successfully implementing nav
 
 And what is this goal? The main goal is to make a robot move from point A to point B, in a safe way. So, basically, to find a path that allows the robot to reach the destination, while making sure that it will not collide with other robots, with people, and obstacles. <br>
 
+## Steps
 To achieve this, we will do a 2 step process:
 1. We will create a map of the environment using `Cartographer`.
 2. We will make the robot navigate using this map – with the Navigation functionalities and tools.
