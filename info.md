@@ -15,15 +15,15 @@ To achieve this, we will do a 2 step process:
 2. We will make the robot navigate using this map – with the Navigation functionalities and tools.
 
 1. Cartographer running with LiDAR on copter
-   This simulation has an Iris copter equipped with a 3D LiDAR in a maze world. To launch rviz and gazebo, run:
-   ```
-   ros2 launch ardupilot_ros cartographer.launch.py
-   ```
+This simulation has an Iris copter equipped with a 3D LiDAR in a maze world. To launch rviz and gazebo, run:
+```
+ros2 launch ardupilot_ros cartographer.launch.py
+```
 
 2. Obstacle avoidance using Cartographer and Nav2
-   Using the same simulation as before, the nav2 node can be launched to control the copter once it is in the air.
-   Launch the simulation:
-   ```
-   ros2 launch ardupilot_ros navigation.launch.py
-   ```
-   You may now navigate while mapping using the Nav2 Goal tool in RVIZ!
+Using the same simulation as before, the nav2 node can be launched to control the copter once it is in the air.
+Launch the simulation:
+```
+ros2 launch ardupilot_ros navigation.launch.py
+```
+You may now navigate while mapping using the Nav2 Goal tool in RVIZ!
