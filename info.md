@@ -29,6 +29,30 @@ ros2 launch ardupilot_ros navigation.launch.py
 ```
 You may now navigate while mapping using the Nav2 Goal tool in RVIZ!
 
+## DDS/micro-Ros
+Ardupilot contains the DDS Client library, which can run as SITL. Then, the DDS application runs a ROS 2 node, an eProsima Integration Service, and the MicroXRCE Agent. The two systems communicate over serial or UDP. <br>
+```mermaid
+---
+title: UDP Loopback
+---
+graph LR
+
+  subgraph Linux Computer
+
+    subgraph Ardupilot SITL
+      veh[sim_vehicle.py] <--> xrceClient[EProsima Micro XRCE DDS Client]
+      xrceClient <--> port1[udp:2019]
+    end
+
+    subgraph DDS Application
+      ros[ROS 2 Node] <--> agent[Micro ROS Agent]
+      agent <-->port1[udp:2019]
+    end
+
+    loopback
+
+  end
+
 ## Info
 1. TF frames of the simulation.
 ![image](https://github.com/user-attachments/assets/d0768435-7fd6-4ac3-8513-62273b8e2ce7)
