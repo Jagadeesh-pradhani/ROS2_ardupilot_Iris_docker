@@ -10,7 +10,7 @@ repositories:
   ardupilot_gz:
     type: git
     url: https://github.com/ArduPilot/ardupilot_gz.git
-    version: main
+    version: jazzy
   ardupilot_sitl_models:
     type: git
     url: https://github.com/ArduPilot/SITL_Models.git
@@ -18,12 +18,12 @@ repositories:
   micro_ros_agent:
     type: git
     url: https://github.com/micro-ROS/micro-ROS-Agent.git
-    version: humble
+    version: jazzy
   ros_gz:
     type: git
     url: https://github.com/gazebosim/ros_gz.git
-    version: humble
+    version: jazzy
   sdformat_urdf:
     type: git
     url: https://github.com/ros/sdformat_urdf.git
-    version: humble
+    version: jazzy
