@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  ardupilot_ros:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=ros
+        - USER_UID=1000
+        - USER_GID=1000
+    container_name: ardupilot_ros
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/home/ros/.Xauthority
+    network_mode: host
+    privileged: true
+    stdin_open: true
+    tty: true
+    working_dir: /home/ros/ros2_ws
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    command: bash
