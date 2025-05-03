@@ -93,8 +93,6 @@ cd ~/ardupilot
 # ArduCopter at San Francisco International Airport
 ./sim_vehicle.py -v ArduCopter -L KSFO --console --map
 
-# ArduPlane in quadplane configuration with console, map, and OSD
-./sim_vehicle.py -v ArduPlane -f quadplane --console --map --osd
 
 # ArduCopter in quadcopter configuration with console, map, and OSD
 ./sim_vehicle.py -v ArduCopter -f quadcopter --console --map --osd
