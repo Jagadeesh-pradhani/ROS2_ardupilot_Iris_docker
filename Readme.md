@@ -29,7 +29,7 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/ardupilot-ros2-docker.git
+   git clone https://github.com/farshidrayhancv/ardupilot-ros2-docker.git
    cd ardupilot-ros2-docker
    ```
 
