@@ -2,20 +2,6 @@
 
 <div align="center">
   <p>
-    <a href="https://github.com/farshidrayhancv/ardupilot-ros2-docker/stargazers">
-      <img src="https://img.shields.io/github/stars/farshidrayhancv/ardupilot-ros2-docker?style=social" alt="GitHub Stars">
-    </a>
-    <a href="https://github.com/farshidrayhancv/ardupilot-ros2-docker/network/members">
-      <img src="https://img.shields.io/github/forks/farshidrayhancv/ardupilot-ros2-docker?style=social" alt="GitHub Forks">
-    </a>
-    <a href="https://github.com/farshidrayhancv/ardupilot-ros2-docker/issues">
-      <img src="https://img.shields.io/github/issues/farshidrayhancv/ardupilot-ros2-docker" alt="GitHub Issues">
-    </a>
-    <a href="https://github.com/farshidrayhancv/ardupilot-ros2-docker/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/farshidrayhancv/ardupilot-ros2-docker" alt="License">
-    </a>
-  </p>
-  <p>
     A complete Docker environment for developing with ArduPilot, ROS2 Humble, and Gazebo Harmonic
   </p>
 </div>
