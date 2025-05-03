@@ -101,7 +101,9 @@ RUN cd ~/ardupilot \
     && ./waf copter -v 
 
 RUN cd ~/ardupilot/Tools/autotest \
-    && sudo pip3 install MAVProxy
+    && sudo pip3 install MAVProxy \
+    && sudo pip3 install MAVProxy[joystick]
+    
 
 
 #ROS2 with SITL
