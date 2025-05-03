@@ -35,13 +35,13 @@
 
 2. Build and start the container:
    ```bash
-   docker-compose build
-   docker-compose up -d
+   docker compose build
+   docker compose up -d
    ```
 
 3. Connect to the container:
    ```bash
-   docker-compose exec ardupilot_ros bash
+   docker compose exec ardupilot_ros bash
    ```
 
 ### 💻 Using Visual Studio Code DevContainer
