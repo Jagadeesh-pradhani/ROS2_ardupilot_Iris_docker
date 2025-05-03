@@ -60,18 +60,14 @@ The DevContainer configuration is located in the `.devcontainer` directory, cont
 
 ```
 .
-├── Ardupilot_ROS.sh          # Helper script for ArduPilot and ROS2
 ├── bashrc                     # Custom bashrc for the container
 ├── docker-compose.yml         # Docker Compose configuration
 ├── Dockerfile                 # Docker image definition
 ├── entrypoint.sh              # Container entrypoint script
 ├── install-prereqs-ubuntu.sh  # ArduPilot prerequisites installer
 ├── instruction.sh             # Additional instructions
-├── inst.sh                    # Installation helper
 ├── ros2_gz.repos              # ROS2 Gazebo repos file
 ├── ros2.repos                 # ROS2 repos file
-├── SECURITY.md                # Security policy
-├── tmuxinator.yml             # Tmux configuration
 ├── workspace                  # Shared workspace directory
 └── .devcontainer/             # VS Code DevContainer configuration
     ├── devcontainer.json
