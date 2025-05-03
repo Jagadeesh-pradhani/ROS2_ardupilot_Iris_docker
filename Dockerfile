@@ -134,7 +134,6 @@ RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 # Copy the entrypoint and bashrc scripts so we have our container's environment set up correctly
 COPY entrypoint.sh /entrypoint.sh
 COPY bashrc /home/${USERNAME}/.bashrc
-COPY Ardupilot_ROS.sh /home/${USERNAME}/Ardupilot_ROS.sh
 
 
 # Set up entrypoint and default command
