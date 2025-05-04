@@ -16,7 +16,6 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ~/.Xauthority:/home/ros/.Xauthority
-      - ../src:/home/ros/ros2_ws/src
     network_mode: host
     privileged: true
     stdin_open: true
