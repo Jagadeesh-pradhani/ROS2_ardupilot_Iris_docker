@@ -81,6 +81,7 @@ RUN cd ~/ros2_ws/ \
     && rosdep update \
     && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
     && rosdep install -y --from-paths src --ignore-src
+    
 
 #BUild
 RUN cd ~/ros2_ws \
@@ -127,6 +128,14 @@ RUN cd ~/ros2_ws \
 RUN cd ~/ros2_ws \
     && colcon build --packages-up-to ardupilot_gz_bringup || true
 RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
+
+
+RUN cd ~/ros2_ws/src/ \
+    && git clone https://github.com/ArduPilot/ardupilot_ros.git \
+    && cd ~/ros2_ws/ \
+    && rosdep install --from-paths src --ignore-src -r --skip-keys gazebo-ros-pkgs \
+    && colcon build --symlink-install --parallel-workers 12 
+
 
 
 ####################################################################################################
