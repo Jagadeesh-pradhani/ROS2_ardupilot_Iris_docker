@@ -16,7 +16,10 @@
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/home/ros/ros2_ws/src"
+	"workspaceFolder": "/home/ros/ros2_ws/",
+
+    // You might also want to set this for better terminal experience:
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/ros/ros2_ws/,type=bind,consistency=cached"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

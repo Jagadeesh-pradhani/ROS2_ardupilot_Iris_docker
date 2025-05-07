@@ -16,10 +16,12 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ~/.Xauthority:/home/ros/.Xauthority
+      - ./src:/tmp/local_src  # Mount your local src to a temporary directory
     network_mode: host
     privileged: true
     stdin_open: true
     tty: true
-    working_dir: /home/ros/ros2_ws
+    working_dir: /home/ros/ros2_ws/src
     entrypoint: ["/bin/bash", "/entrypoint.sh"]
-    command: bash
+    # Copy files at startup if they don't exist yet
+    command: bash -c "if [ ! -f /home/ros/ros2_ws/src/.copied ]; then cp -r /tmp/local_src/* /home/ros/ros2_ws/src/ && touch /home/ros/ros2_ws/src/.copied; fi && bash"

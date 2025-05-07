@@ -136,7 +136,7 @@ RUN cd ~/ros2_ws/src/ \
     && rosdep install --from-paths src --ignore-src -r -y --skip-keys gazebo-ros-pkgs \
     && colcon build --symlink-install --parallel-workers 12 || true
 
-
+COPY ./src/ /home/ros/ros2_ws/src/
 
 ####################################################################################################
 
