@@ -133,8 +133,8 @@ RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 RUN cd ~/ros2_ws/src/ \
     && git clone https://github.com/ArduPilot/ardupilot_ros.git \
     && cd ~/ros2_ws/ \
-    && rosdep install --from-paths src --ignore-src -r --skip-keys gazebo-ros-pkgs \
-    && colcon build --symlink-install --parallel-workers 12 
+    && rosdep install --from-paths src --ignore-src -r -y --skip-keys gazebo-ros-pkgs \
+    && colcon build --symlink-install --parallel-workers 12 || true
 
 
 
