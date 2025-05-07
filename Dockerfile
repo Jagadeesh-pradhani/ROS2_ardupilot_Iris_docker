@@ -134,8 +134,9 @@ RUN cd ~/ros2_ws/src/ \
     && git clone https://github.com/ArduPilot/ardupilot_ros.git \
     && cd ~/ros2_ws/ \
     && rosdep install --from-paths src --ignore-src -r -y --skip-keys gazebo-ros-pkgs \
-    && colcon build --symlink-install --parallel-workers 12 || true
+    && colcon build --packages-up-to ardupilot_ros --parallel-workers 12 || true
 
+# Copy local src folder to ros_ws 
 COPY ./src/ /home/ros/ros2_ws/src/
 
 ####################################################################################################
