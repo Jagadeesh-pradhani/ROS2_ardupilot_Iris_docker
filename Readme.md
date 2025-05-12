@@ -4,7 +4,7 @@
 
 
   <div align="center">
-  <img src="./sample_1.png" alt="ArduPilot ROS2 Docker Environment Preview" width="100%">
+  <img src="https://github.com/farshidrayhancv/ROS2_ardupilot_Iris_docker/blob/main/Sample_1.png?raw=true" alt="ArduPilot ROS2 Docker Environment Preview" width="100%">
   <p>
     A complete Docker environment for developing with ArduPilot, ROS2 Humble, and Gazebo Harmonic
   </p>
