@@ -1,12 +1,10 @@
 # 🚁 ArduPilot ROS2 Docker Environment
 
 <div align="center">
-  <p>
-    A complete Docker environment for developing with ArduPilot, ROS2 Humble, and Gazebo Harmonic
-  </p>
+
 
   <div align="center">
-  <img src="sample_1.png" alt="ArduPilot ROS2 Docker Environment Preview" width="100%">
+  <img src="./sample_1.png" alt="ArduPilot ROS2 Docker Environment Preview" width="100%">
   <p>
     A complete Docker environment for developing with ArduPilot, ROS2 Humble, and Gazebo Harmonic
   </p>
