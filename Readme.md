@@ -196,6 +196,18 @@ You can modify the `Dockerfile` to add additional dependencies or change the bui
   export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_ws/src/ardupilot_gz/models
   ```
 
+- **ardupilot_gazebo package not built**:
+   Solution:
+   ```bash
+   cd ~/ros2_ws
+   rm -rf build/ardupilot_gazebo/
+   rm -rf install/ardupilot_gazebo/
+   ```
+   ```bash
+   colcon build --packages-select ardupilot_gazebo
+   ```
+
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
