@@ -35,7 +35,7 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/farshidrayhancv/ROS2_ardupilot_Iris_docker.git
+   git clone https://github.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker.git
    cd ardupilot-ros2-docker
    ```
 
@@ -48,6 +48,12 @@
 3. Connect to the container:
    ```bash
    docker compose exec ardupilot_ros bash
+   ```
+
+   ***OR***
+1. Pull docker image:
+   ```bash
+   docker pull ghcr.io/jagadeesh-pradhani/ros2_ardupilot_iris_docker:main
    ```
 
 ### 💻 Using Visual Studio Code DevContainer
