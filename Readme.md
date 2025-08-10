@@ -142,7 +142,9 @@ The workspace comes pre-built, but if you need to rebuild:
 
 ```bash
 cd ~/ros2_ws
-colcon build
+colcon test --packages-select ardupilot_dds_tests
+colcon build --packages-up-to ardupilot_sitl
+colcon build --packages-up-to ardupilot_gz_bringup
 source install/setup.bash
 ```
 
