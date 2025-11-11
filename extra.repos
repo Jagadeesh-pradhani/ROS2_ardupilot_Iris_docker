@@ -1,0 +1,5 @@
+repositories:
+  octomap_mapping:
+    type: git
+    url: https://github.com/Jagadeesh-pradhani/octomap_mapping
+    version: 3d_mapping_iris

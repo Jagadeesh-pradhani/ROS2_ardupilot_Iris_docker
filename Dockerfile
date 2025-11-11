@@ -67,6 +67,28 @@ RUN cd ~/ardupilot \
     && ./waf distclean \
     && ./waf configure --board MatekF405-Wing
 
+# Extra WS
+
+RUN mkdir -p ~/ws/src \
+    && cd ~/ws
+
+COPY extra.repos /home/${USERNAME}/ws/extra.repos
+
+RUN cd ~/ws/ \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/extra.repos src    \
+    && sudo apt update \
+    && rosdep update \
+    && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
+    && rosdep install -y --from-paths src --ignore-src
+
+#BUild ws
+RUN cd ~/ws \
+    && colcon build || true
+RUN /bin/bash -c "source ~/ws/install/setup.bash"
+
+
+#### ROS2 WS
+
 RUN mkdir -p ~/ros2_ws/src \
     && cd ~/ros2_ws
 

@@ -15,6 +15,8 @@ mavproxy.py --console --map --aircraft test --master=:14550
 # T5
 ros2 launch octomap_server octomap_mapping.launch.xml
 
+# Wait untill GPS fix and then plan in nav2
+
 
 # Octomap subscribe to /d_scan/points
 
