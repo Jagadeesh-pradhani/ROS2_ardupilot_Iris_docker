@@ -5,12 +5,12 @@ repositories:
     version: master
   ardupilot_gazebo:
     type: git
-    url: https://github.com/ArduPilot/ardupilot_gazebo.git
-    version: ros2
+    url: https://github.com/Jagadeesh-pradhani/ardupilot_gazebo
+    version: camera
   ardupilot_gz:
     type: git
-    url: https://github.com/ArduPilot/ardupilot_gz.git
-    version: jazzy
+    url: https://github.com/Jagadeesh-pradhani/ardupilot_gz
+    version: 3d_mapping
   ardupilot_sitl_models:
     type: git
     url: https://github.com/ArduPilot/SITL_Models.git
@@ -18,12 +18,12 @@ repositories:
   micro_ros_agent:
     type: git
     url: https://github.com/micro-ROS/micro-ROS-Agent.git
-    version: jazzy
+    version: humble
   ros_gz:
     type: git
     url: https://github.com/gazebosim/ros_gz.git
-    version: jazzy
+    version: humble
   sdformat_urdf:
     type: git
     url: https://github.com/ros/sdformat_urdf.git
-    version: jazzy
+    version: humble
